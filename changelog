@@ -15,3 +15,8 @@
 - changed the files structure to now include a `src` folder
 - moved `inputReader.js` to `src/`
 - added `src/index.js`
+
+# commit 5
+- moved a bunch of things
+- added `module.d.ts`
+- added `package.json`

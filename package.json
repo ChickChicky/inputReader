@@ -1,0 +1,19 @@
+{
+    "name": "readInput",
+    "version": "1",
+    "main": "./inputReader.js",
+    "types": "./module.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ChickChicky/inputReader.git"
+    },
+    "keywords": [
+        "input",
+        "read",
+        "readInput",
+        "readinput"
+    ],
+    "bugs": {
+        "url": "https://github.com/ChickChicky/inputReader/issues"
+    }
+}
