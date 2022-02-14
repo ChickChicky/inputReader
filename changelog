@@ -8,3 +8,10 @@
 - added `changelog`
 - added `todo`
 - fixed an issue that caused stdin to prevent program closing
+
+# commit 4
+- added the *returns* jsdoc for `input()`
+- added a default prompt string for the text-typed input (`"> "`)
+- changed the files structure to now include a `src` folder
+- moved `inputReader.js` to `src/`
+- added `src/index.js`

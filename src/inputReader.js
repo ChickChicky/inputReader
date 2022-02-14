@@ -27,6 +27,7 @@ let defaultOptions = {
  * Prompts the user and reads the input
  * @param {string} prompt the prompt to show
  * @param {inputOptions} options optionnal arguments
+ * @returns {Promise<String>}
  */
 function input(prompt,options=defaultOptions) {
     return new Promise((resolve)=>{
@@ -45,6 +46,7 @@ function input(prompt,options=defaultOptions) {
         if (options.type() == 'text') {
             process.stdin.ref();
             
+            prompt ??= '> ';
             str = ""; ptr = 0;
             process.stdout.write(`\x1b[m\x1b[2K\x1b[1G${prompt}\x1b[m${str.replace(/./g, (v)=>{ return options.mask()??v })}`);
 
