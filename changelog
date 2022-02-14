@@ -1,0 +1,10 @@
+# commit 1
+- initial commit
+
+# commit 2
+- edited `readme.md` with some more detailed information
+
+# commit 3
+- added `changelog`
+- added `todo`
+- fixed an issue that caused stdin to prevent program closing

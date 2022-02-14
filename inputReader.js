@@ -43,13 +43,15 @@ function input(prompt,options=defaultOptions) {
         process.stdin.setRawMode(true);
 
         if (options.type() == 'text') {
+            process.stdin.ref();
+            
             str = ""; ptr = 0;
             process.stdout.write(`\x1b[m\x1b[2K\x1b[1G${prompt}\x1b[m${str.replace(/./g, (v)=>{ return options.mask()??v })}`);
 
             let endCallback = ()=>{
                 process.stdin.setRawMode(previousmode);
                 process.stdout.write(`\x1b[m\x1b[2K\x1b[1G${options.afterPrompt()??prompt}\x1b[m${str.replace(/./g, (v)=>{ return options.mask()??v })}\n`);
-                //process.stdin.unref();
+                process.stdin.unref();
             }
 
             let textCallback = (chunk)=>{
@@ -107,9 +109,11 @@ function input(prompt,options=defaultOptions) {
         }
 
         if (options.type() == 'choices') {
+            process.stdin.ref();
+
             let endCallback = ()=>{
                 process.stdin.setRawMode(previousmode);
-                process.stdout.write(text()+`\n`);
+                process.stdout.write(text()+`\n`); process.stdin.unref();
             }
 
             let index = mod(options.defaultIndex(),options.choices().length);
