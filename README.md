@@ -46,7 +46,7 @@ input("Do you enjoy coding ?",{type:'choices',choices:['yes','no']}).then( (answ
     if (answer == 'yes') {
         console.log("I like that too !");
     } else {
-        console.log("That's sad for me :(");
+        console.log("Sad to hear that :(");
     }
 });
 ```
